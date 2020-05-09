@@ -1,0 +1,9 @@
+@charset "UTF-8";
+*{font-family:sans-serif ;}
+body{ padding:0; margin:0; font-size:15pt;}
+.surwrap{position:relative; top:200px; left:450px; width:800px; border:1px solid black;}
+.surwrap  ul > li{ list-style:none;}
+
+.surwrap>.sTop { border: 1px solid black; margin:0; }
+.surwrap>.sTop #surveyName{width:600px; height:20px; margin:10px 0px 0px 0px; border:0; border-bottom:1px solid black; font-size:15pt; padding:0px 0px 3px 0px;}
+
