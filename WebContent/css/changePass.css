@@ -9,8 +9,8 @@ div.cpwrap > ul > li{width:200px; margin:20px 0px 0px 0px;}
 div.cpwrap > ul > li:last-child{width:200px; margin:0;}
 
 div.cpwrap > ul > li > input{width:200px; height:20px; font-size:11pt; padding:0px 0px 0px 10px; border:0; border-bottom:1px solid rgb(197, 197, 197);}
-div.cpwrap > ul > li > #btnChange{ width:210px; height:25px; border:1px solid rgb(131, 131, 131); background-color:rgb(147, 147, 147); font-size:14pt; color:white;}
-div.cpwrap > ul > li > #btnCancel{ width:50px; height:18px; font-size:10pt; border:1px solid rgb(175, 175, 175); background-color:white; margin:3px 0px 0px 160px; font-size:10pt; padding:0; }
+div.cpwrap > ul > li > #btnChange{ width:210px; height:25px; border:1px solid rgb(131, 131, 131); background-color:rgb(147, 147, 147); font-size:14pt; color:white; cursor:pointer;}
+div.cpwrap > ul > li > #btnCancel{ width:50px; height:18px; font-size:10pt; border:1px solid rgb(175, 175, 175); background-color:white; margin:3px 0px 0px 160px; font-size:10pt; padding:0; cursor:pointer;}
 
 
 

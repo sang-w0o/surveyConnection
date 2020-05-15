@@ -1,11 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>설문 참여 하기</title>
+<script src="../script/jquery-3.5.0.min.js"></script>
+<script src="../script/myPage.js"></script>
+<script src="../script/closeSurveyList.js"></script>
+<script src="../script/closeSurvey.js"></script>
 <%
 	if( session==null || session.getAttribute("userInfo")==null ){
 %>
@@ -17,23 +21,27 @@
 <% 	
 	}
 %>
-
-<script src="../script/jquery-3.5.0.min.js"></script>
-<script src="../script/showcategory.js"></script>
-<script src="../script/myPage.js"></script>
 <script src="../script/index.js"></script>
-<script src="../script/login.js"></script>
 <script src="../script/sendEmail.js"></script>
 <script src="../script/changePass.js"></script>
-<script src="../script/enterSurvey.js"></script>
+<script src="../script/login.js"></script>
+<script src="../script/myPage.js"></script>
+<script src="../script/signUp.js"></script>
+<script src="../script/closeSurveyList.js"></script>
 <script src="../script/topMenu.js"></script>
-<link rel="stylesheet" href="../css/myPage.css">
+
+
 <link rel="stylesheet" href="../css/index.css">
-<link rel="stylesheet" href="../css/login.css">
 <link rel="stylesheet" href="../css/sendEmail.css">
 <link rel="stylesheet" href="../css/changePass.css">
-<link rel="stylesheet" href="../css/showcategory.css">
+<link rel="stylesheet" href="../css/login.css">
+<link rel="stylesheet" href="../css/myPage.css">
+<link rel="stylesheet" href="../css/signUp.css">
 <link rel="stylesheet" href="../css/topMenu.css">
+<link rel="stylesheet" href="../css/closeSurveyList.css">
+
+
+<title>마감된 설문 보기</title>
 </head>
 <body>
 
@@ -44,7 +52,7 @@
 	</div>
 	<div class="mid">
 			<div id="content">
-				<jsp:include page="showcategory.jsp"></jsp:include> 
+				<jsp:include page="closeSurveyList.jsp"></jsp:include>
 			</div>
 			<div id="side">
 				<div id="member">
@@ -73,5 +81,6 @@
 		<div id="ad">광고 띄우기</div>
 	</div>
 </div>
+
 </body>
 </html>

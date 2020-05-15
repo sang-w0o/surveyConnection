@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+.rewrap{width:1200px; font-family: sans-serif; font-size:15pt;}
+
+.rewrap > .reTop > button{ width:200px; height:30px; font-size:13pt; border:1px solid white; background-color:#4e5a72; color:white;}
+.rewrap > .reTop > button:hover{ background-color:#97a2b8; cursor:pointer;}
+
+.rewrap > .reMid{width:800px; padding:50px 20px 20px 20px; margin:0px 0px 0px 400px; background-color:#4e5a72;}
+.rewrap > .reMid  ul >li {list-style:none; float:left; }
+
+.rewrap > .reMid>.reTitle{ width: 800px; height:30px; margin:0; padding: 10px 0px 5px 0px; border:0; color:white; border-bottom:1px solid rgb(240, 240, 240); border-top:1px solid rgb(240, 240, 240);}
+.rewrap > .reMid>.reTitle > ul{margin:0; padding:0px 0px 0px 50px;}
+.rewrap > .reMid>.reTitle > ul > li:nth-child(1){ width:150px; margin:0px 20px 0px 0px; }
+.rewrap > .reMid>.reTitle > ul > li:nth-child(2){ width:150px; margin:0px 20px 0px 0px; }
+.rewrap > .reMid>.reTitle > ul > li:nth-child(3){ width:300px; margin:0px 20px 0px 0px;  }
+.rewrap > .reMid>.reTitle > ul > li:nth-child(4){ width:80px; margin:0; text-align:center;}
+
+.rewrap > .reMid>.reCont{ width: 800px; height:600px;  margin:0; padding: 5px 0px 5px 0px; border:0px; color:white; border-bottom:4px double rgb(205, 205, 205); background-color:#5c6a87; overflow:auto;}
+.rewrap > .reMid>.reCont > ul{margin:0; padding:0px 0px 0px 50px; height:40px; border-bottom: 1px dashed white;}
+.rewrap > .reMid>.reCont > ul > li {margin:0; padding:5px 0px 5px 0px;; height:30px; }
+.rewrap > .reMid>.reCont > ul > li:nth-child(1){ width:150px; margin:0px 20px 0px 0px; overflow:hidden;}
+.rewrap > .reMid>.reCont > ul > li:nth-child(2){ width:150px; margin:0px 20px 0px 0px; overflow:hidden;}
+.rewrap > .reMid>.reCont > ul > li:nth-child(3){ width:280px; margin:0px 20px 0px 0px;  }
+.rewrap > .reMid>.reCont > ul > li:nth-child(4){ width:110px; text-align:center;}
+.rewrap > .reMid>.reCont > ul > li:nth-child(4) > button{ width:45px; background-color:#5c6a87; border:1px solid white; color:white; display:inline-block;}
+.rewrap > .reMid>.reCont > ul > li:nth-child(4) > button:first-child{ margin:0px 10px 0px 10px;  }
+.rewrap > .reMid>.reCont > ul > li:nth-child(4) > button:hover {background-color:#3e485b; cursor:pointer; }
+
+.rewrap > .reBottom{width:800px; padding:0px 20px 20px 20px; margin:0px 0px 0px 400px; background-color:#4e5a72; }
+.rewrap > .reBottom > button{ width:150px; height:30px; border:1px solid white; background-color:#4e5a72; color:white; margin: 0px 0px 0px 320px; }
+.rewrap > .reBottom > button:hover{ background-color: #262c38; cursor:pointer;}
+

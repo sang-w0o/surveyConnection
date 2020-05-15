@@ -1,1 +1,150 @@
 @charset "UTF-8";
+* {
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.wrap {
+    width: 1200px;
+    margin: 100px 100px 0 100px;
+    position: relative;
+    padding: 0px 50px 50px 50px;
+    background-color: white;
+}
+
+.wrap > .top {
+    height: 100px;
+    top: 0;
+    right: 0;
+    left: 0;
+    position: relative;
+}
+
+.wrap > .top > #logo {
+    display: inline-block;
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    font-size:27pt;
+    color:rgb(155, 155, 155);
+    font-weight: bold;
+    cursor:pointer;
+}
+.wrap>.top>#logo>span{
+    font-size:30pt;
+    color:black;
+}
+
+
+
+.wrap > .mid {
+    height: 901px;
+    position: relative;
+    left: 0;
+    right: 0;
+}
+
+.wrap > .mid > #content {
+    border: 1px solid black; 
+    height: 900px;
+    width: 900px;
+    display: inline-block;
+    position: absolute;
+    overflow:auto;
+}
+
+.wrap > .mid > #content > #logo {
+	margin : 0 0 0 340px;
+	display: inline-block;
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    font-size:27pt;
+    color:rgb(155, 155, 155);
+    font-weight: bold;
+}
+
+.wrap > .mid > #content > #images{
+	margin-top:150px;
+}
+#imgWrite{
+	margin-left:60px;
+	width:180px;
+	height:180px;
+}
+
+#imgUpload{
+	width:200px;
+	height:200px;
+}
+
+#imgRespond{
+	width:180px;
+	height:180px;
+}
+#imgResult{
+	margin-left:18px;
+	width:180px;
+	height:180px;
+}
+.wrap>.mid> #content >#logo>span{
+    font-size:30pt;
+    color:black;
+}
+
+.wrap > .mid > #side {
+    height: 1300px;
+    width: 300px;
+    display: inline-block;
+    position: absolute;
+    left: 910px;
+}
+
+.wrap > .mid > #side > #member {
+    position: relative;
+    border: 1px solid rgb(225, 225, 225);
+    height: 230px;
+    overflow: hidden;
+    margin: 10px 0px 0px 0px;
+    border-radius:20px;
+}
+
+.wrap > .mid > #side > #changePass {
+    position: relative;
+    border: 1px solid rgb(225, 225, 225);
+    height: 180px;
+    overflow: hidden;
+    margin: 10px 0px 0px 0px;
+    border-radius:20px;
+    display:none;
+    transition:display 2s;
+}
+	
+.wrap > .bottom {
+    height: 100px;
+    border: 1px solid black;
+    bottom: 0;
+    right: 0;
+    left: 0;   
+}
+
+#tblDiv {
+	width:800px;
+	height:140px;
+	margin : 0 auto;
+}
+
+#tblInfo{
+	border: 1px solid black;
+}
+
+#tblInfo *{
+	border:1px solid black;
+	background-color:#c0c7d1
+}

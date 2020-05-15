@@ -1,0 +1,82 @@
+@charset "UTF-8";
+ #menu {
+    display: inline-block;
+    position: relative;
+    width: 700px;
+    height: 100px;
+    left: 700px;
+    
+}
+
+ #menu > ul {
+    list-style: none;
+    width: 100%;
+    padding:0;    
+
+}
+ #menu > ul > li:first-child{
+    color: gray;
+    float: left;
+    white-space: nowrap;
+    font-size: 15pt;
+    width:10pt;
+}
+ #menu > ul > li:nth-child(2){
+    color: gray;
+    float: left;
+    white-space: nowrap;
+    font-size: 15pt;
+    width:250px;
+}
+ #menu > ul > li:nth-child(3){
+    width:10px;
+    color:gray;
+    white-space: nowrap;
+    font-size:15pt;
+    float:left;
+}
+ #menu > ul > li:last-child {
+    color: gray;
+    float: left;
+    white-space: nowrap;
+    font-size: 15pt;
+    width:350px;
+    
+}
+
+#menu>ul>li:nth-child(2)>ul{
+    list-style: none;
+    padding:0;
+    background-color:white;
+    display:none;
+    font-size:12pt;
+}
+#menu>ul>li:nth-child(4)>ul{
+    list-style: none;
+    padding:0;
+    background-color:white;
+    font-size:12pt;
+    display:none;
+}
+#menu>ul>li>ul>li{
+    height:20px;
+    margin:10px 0px 0px 0px;
+    float:left;
+}
+#menu>ul>li>ul>li{
+    margin:10px 0px 0px 30px;
+}
+#menu>ul>li:hover{
+    font-weight:bold;
+    text-decoration: underline;
+    cursor:pointer;
+}
+#menu>ul>li:hover>ul{
+    font-weight:bold;
+    text-decoration: underline ;
+    display: block ;
+    
+}
+#menu>ul>li>ul>li:hover{
+    text-decoration: underline ;
+}

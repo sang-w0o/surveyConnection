@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+
+#subTitle{ background-color:#4e5a72; color:white; margin:150px 0px 0px 50px; border:1px solid rgb(94, 94, 94); border-bottom:0px; width:90px; height:25px; border-radius:5px 5px 0px 0px; padding:5px 0px 0px 15px; display:none;}
+.subjectiveR { margin:0px 0px 0px 20px; height:450px; border:1px solid rgb(146, 146, 146); overflow:scroll; font-size:15pt; border-radius:15px;  display:none;}
+.subjectiveR > ul { margin:0; padding:0;}
+.subjectiveR > ul > li{list-style:none; background-color:rgb(239, 239, 239); padding:20px 0px 20px 10px; border:0; border-bottom:1px dashed black;}
+.subjectiveR > ul > li:nth-child(odd){background-color:rgb(251, 251, 251);} 
+
+
+
+
+

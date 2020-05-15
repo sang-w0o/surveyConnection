@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+.phwrap{ margin:40px 50px 0px 50px; padding:0px 0px 100px 0px; width:900px; font-size:13pt; font-family:sans-serif }
+.phwrap  ul > li {list-style: none; }
+
+
+
+.phwrap > .pointHistory>.phTitle {border:0;border-bottom:1px solid rgb(158, 158, 158); border-top:1px solid rgb(158, 158, 158); width:700px; margin:0px 150px 0px 50px; height:20px; padding:10px 0px 10px 0px; background-color:#4e5a72; color:white;}
+.phwrap > .pointHistory>.phTitle > ul{margin:0; padding:0;}
+.phwrap > .pointHistory>.phTitle > ul>li { float:left;}
+.phwrap > .pointHistory>.phTitle > ul>li:first-child{width: 550px; margin:0px 10px 0px 10px; text-align: center;}
+.phwrap > .pointHistory>.phTitle > ul>li:nth-child(2){width: 100px; margin:0px 0px 0px 10px; text-align: center;}
+
+.phwrap > .pointHistory>.phTop{ margin:0px 0px 0px 310px; border:1px solid rgb(150, 150, 150); width: 135px; padding:5px 5px 0px 25px; border-bottom:0px; border-radius: 5px 5px 0px 0px ;background-color:#e4e7ec;}
+
+.phwrap > .pointHistory>.phCont{width:700px; height:400px; margin:0px 150px 0px 50px; border-bottom:4px double rgb(158, 158, 158); overflow:scroll; }
+.phwrap > .pointHistory>.phCont > ul{ margin:0; padding:0; height:40px; width:700px; border-bottom:1px dashed rgb(158, 158, 158);  color:rgb(40, 40, 40); background-color:rgb(244, 244, 244);}
+.phwrap > .pointHistory>.phCont > ul:hover,.ctwrap > .categorySurvey>.cateCont > ul:hover>li:nth-child(6)>button{ background-color:rgb(227, 227, 227);}
+.phwrap > .pointHistory>.phCont > ul > li{float:left; padding: 10px 0px 5px 0px;}
+.phwrap > .pointHistory>.phCont > ul>li:first-child{width: 550px; padding:8px; margin:1px 10px 0px 0px; border-right:1px dashed rgb(140, 140, 140);}
+.phwrap > .pointHistory>.phCont > ul>li:nth-child(2){width: 100px; margin:0px 0px 0px 10px; text-align: center;}
+.phwrap > .pointHistory>.phCont > ul > li:nth-child(2):hover>div{transform:translate3d(-100px,0,0); transition:transform 3s;}
+.phwrap > .pointHistory>#total{ width:150px; background-color:#8694ad; margin:0px 0px 0px 50px; padding:0px 0px 0px 550px; color:white; border-bottom:1px dotted  black; } 
+
+
+.phwrap > .pointHistory>.phBottom { background-color:#4e5a72; padding:0; margin:0px 0px 0px 50px; height:40px; width:700px;}
+.phwrap > .pointHistory>.phBottom > ul { padding:5px 0px 0px 280px; margin:0;}
+.phwrap > .pointHistory>.phBottom > ul > li > #btnCancel { border:1px solid white; background-color:#4e5a72; width:130px; height:25px;  font-size:13pt; color:white;}
+.phwrap > .pointHistory>.phBottom > ul > li > #btnCancel:hover { background-color:#262c38; cursor:pointer;}
+
+
+
+
+
+
+
+
+
+
+
+

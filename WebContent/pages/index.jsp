@@ -6,22 +6,33 @@
 <head>
 <meta charset="UTF-8">
 <script src="../script/jquery-3.5.0.min.js"></script>
+<script src="../script/topMenu.js"></script>
 <script src="../script/index.js"></script>
 <script src="../script/sendEmail.js"></script>
 <script src="../script/changePass.js"></script>
-<script src="../script/login.js"></script>
-<script src="../script/myPage.js"></script>
 <script src="../script/signUp.js"></script>
-<script src="../script/myPage.js"></script>
 <script src="../script/surveyList.js"></script>
-<link rel="stylesheet" href="../css/surveyList.css">
-<link rel="stylesheet" href="../css/surveyForm.css">
-<link rel="stylesheet" href="../css/signUp.css">
-<link rel="stylesheet" href="../css/sendEmail.css">
-<link rel="stylesheet" href="../css/myPage.css">
-<link rel="stylesheet" href="../css/login.css">
+
+<c:choose>
+	<c:when test='${result == null || result == false }'>
+		<script src="../script/login.js"></script>
+	</c:when>
+	<c:otherwise>
+		<script src="../script/login.js"></script>
+		<script src="../script/myPage.js"></script>
+	</c:otherwise>
+</c:choose> 
+
 <link rel="stylesheet" href="../css/index.css">
+<link rel="stylesheet" href="../css/sendEmail.css">
 <link rel="stylesheet" href="../css/changePass.css">
+<link rel="stylesheet" href="../css/login.css">
+<link rel="stylesheet" href="../css/myPage.css">
+<link rel="stylesheet" href="../css/signUp.css">
+<link rel="stylesheet" href="../css/surveyList.css">
+<link rel="stylesheet" href="../css/topMenu.css">
+
+
 <title>surVey conneCtion</title>
 </head>
 <body>
@@ -29,25 +40,7 @@
 <div class="wrap">
 	<div class="top">
 		<div id="logo">&nbsp;&nbsp;&nbsp;sur<span>V</span>ey&nbsp;&nbsp;&nbsp;<br>conne<span>C</span>tion</div>
-		<div id="menu">
-				<ul>
-					<li>|</li>
-					<li >처음이세요?
-						<ul id="notice">
-							<li>사이트 소개</li>
-							<li>이용방법</li>
-						</ul>
-					</li>
-					<li>|</li>
-					<li>설문 어쩌고
-						<ul>
-							<li>설문 작성</li>
-							<li>설문 참여</li>
-						</ul>
-					</li>
-				</ul>
-
-			</div>
+		<jsp:include page="topMenu.jsp"></jsp:include>
 	</div>
 	<div class="mid">
 			<div id="content">

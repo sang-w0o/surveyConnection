@@ -30,9 +30,25 @@ div.myPage {
 }
 
 .myPage > ul > li {
-    margin: 18px 0px 0px 70px;
+    margin: 18px 0px 0px 30px;
     color:white;
 }
+
+#btnMyPoint {
+    padding:3px 8px 1px 8px;
+    margin:0px 0px 0px 30px;
+    border:1px solid white;
+    color:white;
+    text-decoration: none;
+    font-size:11pt;
+}
+
+#btnMyPoint:hover {
+   cursor:pointer;
+   color:rgb(86, 49, 206);
+   border:1px solid rgb(86, 49, 206);
+}
+
 
 .myPage > ul > li:last-child > button {
     color: white;
@@ -46,7 +62,7 @@ div.myPage {
 .myPage > ul > li:last-child {
     margin: 10px 0px 0px 0px;
     width: 289px;
-    padding: 3px 0px 0px 10px;
+    padding: 3px 0px 0px 5px;
     height: 27px;
     background-color: rgb(190, 190, 190);
     border: 2px solid white;
@@ -54,9 +70,14 @@ div.myPage {
     border-left: 0;
 }
 
+.myPage > ul > li:nth-child(4):hover{
+    border-top: 1px solid rgb(86, 49, 206);
+    border-bottom: 1px solid rgb(86, 49, 206);
+}
 .myPage > ul > li:last-child > button:hover {
     font-weight: bold;
     cursor: pointer;
+    color:rgb(86, 49, 206);
 }
 
 .myPage > button {
@@ -70,10 +91,13 @@ div.myPage {
 }
 
 .myPage > button:hover {
-    background-color: rgb(161, 161, 161);
-    color: white;
-    border: 1px solid white;
+    color:rgb(86, 49, 206);
+    cursor:pointer;
+    border: 1px solid rgb(86, 49, 206);;
 }
+
+
+
 
 
 

@@ -1,9 +1,58 @@
 @charset "UTF-8";
 *{font-family:sans-serif ;}
 body{ padding:0; margin:0; font-size:15pt;}
-.surwrap{position:relative; top:200px; left:450px; width:800px; border:1px solid black;}
+.surwrap{position:relative; top:80px; left:450px; width:800px; border:1px solid black;  padding:0; margin:0;}
 .surwrap  ul > li{ list-style:none;}
 
-.surwrap>.sTop { border: 1px solid black; margin:0; }
-.surwrap>.sTop #surveyName{width:600px; height:20px; margin:10px 0px 0px 0px; border:0; border-bottom:1px solid black; font-size:15pt; padding:0px 0px 3px 0px;}
+.surwrap>.sTop { border:0px; border-bottom: 1px solid black; margin:0; background-color:rgb(208, 208, 208); margin:0;}
+.surwrap>.sTop>ul{margin:0; padding:10px 0px 0px 30px;}
+.surwrap>.sTop #surveyName{width:600px; height:20px; margin:20px 0px 20px 0px; border:0; border-bottom:1px solid rgb(103, 103, 103); font-size:15pt; padding:0px 0px 3px 0px; background-color: rgb(208, 208, 208);}
+.surwrap>.sTop>ul>li>select{ width:100px; height: 20px; background-color:white; color:black}
+.surwrap>.sTop>ul>li:last-child{padding:0px 0px 0px 170px; letter-spacing: 4px;}
+.surwrap>.sTop>ul>li #open,.surwrap>.sTop>ul>li #close{ vertical-align:5px; margin:0px 5px 0px 0px;}
+.surwrap>.sTop>ul>li #close:hover,.surwrap>.sTop>ul>li #open:hover,.surwrap>.sTop>ul>li label:hover,.surwrap>.sTop>ul>li label:hover{ cursor:pointer;}
 
+.surwrap>.sMid>.questionCond{height:40px;}
+.surwrap>.sMid>.questionCond>ul{ width:100%; margin:20px 0px 10px 0px; padding:0px 100px 0px 100px; height:50px;}
+.surwrap>.sMid>.questionCond>ul>li{float:left;}
+.surwrap>.sMid>.questionCond>ul>li>label{margin: 0px 10px 0px 0px; padding: 5px 10px 5px 0px; }
+.surwrap>.sMid>.questionCond>ul>li #choice,.surwrap>.sMid>.questionCond>ul>li #subjective{ vertical-align:5px; margin:0px 10px 0px 10px; }
+.surwrap>.sMid>.questionCond>ul>li:first-child{ border-right:3px solid rgb(146, 146, 146); margin:0px 20px 0px 0px;}
+
+.surwrap>.sMid>.questionCond>ul>li #addQuestion{ width:85px; height:20px; vertical-align:baseline; margin:0px 50px 0px 100px; border:0; background-color:white; font-size:12pt;}
+.surwrap>.sMid>.questionCond>ul>li #deleteQuestion{ width:85px; height:20px; vertical-align:baseline; margin:0px 50px 0px 40px; border:0; background-color:white; font-size:12pt;}
+.surwrap>.sMid>.questionCond>ul>li button:hover{ text-shadow: 2px 2px 5px red; cursor:pointer; }
+
+.surwrap>.sMid>.questionList{max-height:600px; overflow:auto;}
+.surwrap>.sMid>.questionList>ul{margin:0px 30px 40px 30px ; width:750px; border-bottom:1px dashed black; padding:0px 0px 40px 0px; }
+.surwrap>.sMid>.questionList>ul>li{float:left;}
+.surwrap>.sMid>.questionList>ul::before, .surwrap>.sMid>.questionList>ul::after{clear:both; display:block; content:"";}
+.surwrap>.sMid>.questionList>ul>li#qt{width:950px; height:45px;}
+.surwrap>.sMid>.questionList>ul>li#qt>input{  display: inline-block; margin:0px 0px 0px 0px; padding:0;width:530px; height:20px; border:0; border-bottom:1px solid rgb(167, 167, 167); font-size:13pt; padding:0px 0px 5px 10px;}
+.surwrap>.sMid>.questionList>ul>li#qt>button{margin:0px; padding:0px;width:90px; height:20px; font-size:11pt; display:inline-block; }
+.surwrap>.sMid>.questionList>ul>li#qt>button:hover{ cursor:pointer;}
+
+.surwrap>.sMid>.questionList>ul>li:nth-child(2){margin: 0px 20px 0px 0px;}
+.surwrap>.sMid>.questionList>ul>li:nth-child(3){margin: 0px 20px 0px 0px;}
+.surwrap>.sMid>.questionList>ul>li:nth-child(4){margin: 0px 20px 0px 0px;}
+.surwrap>.sMid>.questionList>ul>li:nth-child(5){margin: 0px 20px 0px 0px;}
+
+
+.surwrap>.sMid>.questionList>ul>li:nth-child(2) #choice_content1{ margin:0px 0px 0px 10px; width:100px; border:0px; border-bottom:1px solid rgb(139, 139, 139); padding:0px 0px 4px 0px;}
+.surwrap>.sMid>.questionList>ul>li:nth-child(3)>#choice_content2{ margin:0px 0px 0px 10px; width:100px; border:0px; border-bottom:1px solid rgb(139, 139, 139); padding:0px 0px 4px 0px;}
+.surwrap>.sMid>.questionList>ul>li:nth-child(4)>#choice_content3{ margin:0px 0px 0px 10px; width:100px; border:0px; border-bottom:1px solid rgb(139, 139, 139); padding:0px 0px 4px 0px;}
+.surwrap>.sMid>.questionList>ul>li:nth-child(5)>#choice_content4{ margin:0px 0px 0px 10px; width:100px; border:0px; border-bottom:1px solid rgb(139, 139, 139); padding:0px 0px 4px 0px;}
+.surwrap>.sMid>.questionList>ul>li:nth-child(6)>#choice_content5{ margin:0px 0px 0px 10px; width:100px; border:0px; border-bottom:1px solid rgb(139, 139, 139); padding:0px 0px 4px 0px;}
+
+.surwrap>.sBottom{ height:30px; padding:10px 0px 10px 290px; background-color:rgb(165, 165, 165); border-top:1px dotted  black;}
+.surwrap>.sBottom>button{ width:100px; background-color:rgb(165, 165, 165); height:25px; font-size:11pt; border:1px solid white; color:white;}
+.surwrap>.sBottom>button:hover{ background-color: gray; cursor:pointer;}
+
+
+.surwrap>.sMid>.questionList>ul{display:none;}
+.surwrap>.sMid>.questionList>ul>li#qt{display:none;}
+.surwrap>.sMid>.questionList>ul>li#qt>input{display:none;}
+.surwrap>.sMid>.questionList>ul>li>button{display:none;}
+.surwrap>.sMid>.questionList>ul>li>input{display:none;}
+
+ 

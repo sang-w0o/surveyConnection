@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+.ctwrap{ margin:40px 50px 0px 50px; padding:0px 0px 100px 0px; width:700px; font-size:13pt; }
+.ctwrap  ul > li {list-style: none; }
+
+
+
+.ctwrap > .categorySurvey>.cateTitle {border:0;border-bottom:1px solid rgb(158, 158, 158); border-top:1px solid rgb(158, 158, 158); width:700px; margin:0px 150px 0px 50px; height:20px; padding:10px 0px 10px 0px;}
+.ctwrap > .categorySurvey>.cateTitle > ul{margin:0; padding:0;}
+.ctwrap > .categorySurvey>.cateTitle > ul>li { float:left;}
+.ctwrap > .categorySurvey>.cateTitle > ul>li:first-child{width: 100px; margin:0px 0px 0px 30px;}
+.ctwrap > .categorySurvey>.cateTitle > ul>li:nth-child(2){width: 200px; margin:0px 0px 0px 10px;}
+.ctwrap > .categorySurvey>.cateTitle > ul>li:nth-child(3){width: 100px; margin:0px 0px 0px 10px; }
+.ctwrap > .categorySurvey>.cateTitle > ul>li:nth-child(4){width: 80px; margin:0px 0px 0px 10px; }
+.ctwrap > .categorySurvey>.cateTitle > ul>li:nth-child(5){width: 50px; margin:0px 0px 0px 10px;}
+
+.ctwrap > .categorySurvey>.cateTop{ margin:0px 0px 0px 310px; border:1px solid rgb(150, 150, 150); width: 160px; padding:5px 15px 5px 15px; border-bottom:0px; border-radius: 5px 5px 0px 0px ; background-color:#4e5a72; color:white;}
+
+.ctwrap > .categorySurvey>.cateCont{width:700px; margin:0px 150px 0px 50px; border-bottom:4px double rgb(158, 158, 158); }
+.ctwrap > .categorySurvey>.cateCont > ul{ margin:0; padding:0; height:40px; width:700px; border-bottom:1px dashed rgb(158, 158, 158);  color:rgb(40, 40, 40); background-color:rgb(244, 244, 244);}
+.ctwrap > .categorySurvey>.cateCont > ul:hover,.ctwrap > .categorySurvey>.cateCont > ul:hover>li:nth-child(6)>button{ background-color:rgb(227, 227, 227);}
+.ctwrap > .categorySurvey>.cateCont > ul > li{float:left; padding: 10px 0px 5px 0px;}
+.ctwrap > .categorySurvey>.cateCont > ul>li:first-child{width: 100px; margin:0px 0px 0px 30px;}
+.ctwrap > .categorySurvey>.cateCont > ul>li:nth-child(2){width: 200px; margin:0px 0px 0px 10px; white-space:nowrap; overflow:hidden;}
+.ctwrap > .categorySurvey>.cateCont > ul>li:nth-child(3){width: 100px; margin:0px 0px 0px 10px; text-align:center; white-space:nowrap; overflow:hidden;}
+.ctwrap > .categorySurvey>.cateCont > ul>li:nth-child(4){width: 50px; margin:0px 0px 0px 20px; text-align: center;}
+.ctwrap > .categorySurvey>.cateCont > ul>li:nth-child(5){width: 50px; margin:0px 0px 0px 40px; }
+.ctwrap > .categorySurvey>.cateCont > ul>li:nth-child(6)>button{ font-size:11pt;padding:3px 0px 0px 0px; border:0px; background-color:rgb(244, 244, 244); color:black;}
+.ctwrap > .categorySurvey>.cateCont > ul>li:nth-child(6)>button:hover{ background-color:rgb(227, 227, 227); font-weight:bold; border-bottom:1px solid rgb(184, 94, 219); color:rgb(184, 94, 219); cursor:pointer;}
+
+.ctwrap > .categorySurvey>.cateCont > ul:last-child{border-bottom:0;}
+.ctwrap > .categorySurvey > .cateCont > ul > li:nth-child(2):hover>div{transform:translate3d(-100px,0,0); transition:transform 3s;}
+
+.ctwrap > .categorySurvey > .cateBottom{ width:700px; height:20px; background-color:#4e5a72; margin:0px 0px 0px 50px; }
+
+
+
+
+

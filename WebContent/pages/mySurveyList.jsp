@@ -5,38 +5,38 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>설문 참여 하기</title>
+<title>내 설문 보기</title>
+
 <%
 	if( session==null || session.getAttribute("userInfo")==null ){
 %>
 	<script>
-		alert("잘못 된 접근입니다.");
+		alert("로그인 후 이용 가능한 서비스 입니다.");
 		location.href = "index.jsp";
 	</script>
 	
 <% 	
 	}
 %>
-
 <script src="../script/jquery-3.5.0.min.js"></script>
-<script src="../script/showcategory.js"></script>
 <script src="../script/myPage.js"></script>
 <script src="../script/index.js"></script>
 <script src="../script/login.js"></script>
 <script src="../script/sendEmail.js"></script>
 <script src="../script/changePass.js"></script>
-<script src="../script/enterSurvey.js"></script>
+<script src="../script/mysList.js"></script>
+<script src="../script/mySurveyList.js"></script>
 <script src="../script/topMenu.js"></script>
 <link rel="stylesheet" href="../css/myPage.css">
 <link rel="stylesheet" href="../css/index.css">
 <link rel="stylesheet" href="../css/login.css">
 <link rel="stylesheet" href="../css/sendEmail.css">
 <link rel="stylesheet" href="../css/changePass.css">
-<link rel="stylesheet" href="../css/showcategory.css">
-<link rel="stylesheet" href="../css/topMenu.css">
+<link rel="stylesheet" href="../css/mysList.css">
+<link rel="stylesheet" href="../css/topMenu.css"> 
 </head>
 <body>
-
+<body>
 <div class="wrap">
 	<div class="top">
 		<div id="logo">&nbsp;&nbsp;&nbsp;sur<span>V</span>ey&nbsp;&nbsp;&nbsp;<br>conne<span>C</span>tion</div>
@@ -44,7 +44,7 @@
 	</div>
 	<div class="mid">
 			<div id="content">
-				<jsp:include page="showcategory.jsp"></jsp:include> 
+				<jsp:include page="mysList.jsp"></jsp:include> 
 			</div>
 			<div id="side">
 				<div id="member">

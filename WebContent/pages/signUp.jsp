@@ -8,7 +8,7 @@
 <script src="../script/signUp.js"></script>
 <link rel="stylesheet" href="../css/signUp.css">
 
-<title>surVey conneCtion</title>
+<title>회원 가입</title>
 </head>
 <body>
 <form method="post" action="">

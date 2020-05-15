@@ -1,19 +1,17 @@
 var gPage = 1;
-$.fn.bindGetByCategory = function(){
+$.fn.bindGetByMySurveyType = function(){
 	this.click(function(){
-		let clicked_c_code = $(this).val();
+		var clicked_myType = $(this).val();
 		$('.cateCont ul').remove();
 		$.ajax({
-			url:'../SurveyGetByCategory.do',
-			type:'get',
+			url:'../SurveyGetMySurveyInfo.do',
+			type:'post',
 			data:{
-				page:gPage,
-				c_code:clicked_c_code
+				myType: clicked_myType,
+				page:gPage
 			},
 			success:function(data){
-				$('#currentCate').empty();
-				$('<span>'+clicked_c_code+'</span>').appendTo($('#currentCate'));
-				for(let i = 0 ;i < data.surveys.length; i++){
+				for(let i = 0; i < data.surveys.length; i++){
 					let survey = data.surveys[i];
 					let obj = $('<ul>' + 
 					'<li>' + survey.writer + '</li>' +
@@ -23,14 +21,21 @@ $.fn.bindGetByCategory = function(){
 					'</ul>');
 					obj.data('survey', survey);
 					obj.data("respondent", data.respondent);
-					obj.bindListClick();
+		
+					if (clicked_myType == 'MY' || clicked_myType == 'inter') {
+						obj.bindListClick();
+					}
+					else if (clicked_myType =='MY1' || clicked_myType == 'inter1' || clicked_myType == 'phar') {
+						obj.bindCloseSurveyClick();
+					}
+					
 					$('.cateCont').append(obj);
 				}
-				$('.cateBottom #btnNext').val(clicked_c_code);
-				$('.cateBottom #btnFirst').val(clicked_c_code);
-				$('.cateBottom #btnPrev').val(clicked_c_code);
-				$('.cateBottom #btnLast').val(clicked_c_code);
 				
+				$('.cateBottom #btnNext').val(clicked_myType);
+				$('.cateBottom #btnFirst').val(clicked_myType);
+				$('.cateBottom #btnPrev').val(clicked_myType);
+				$('.cateBottom #btnLast').val(clicked_myType);
 				gPage = data.page;
 			}
 		})
@@ -39,17 +44,18 @@ $.fn.bindGetByCategory = function(){
 
 $.fn.bindGetNext = function(){
 	this.click(function(){
+		var clicked_myType = $('.cateBottom #btnNext').val();
 		$('.cateCont ul').remove();
 		$.ajax({
-			url:'../SurveyGetByCategory.do',
-			type:'get',
+			url:'../SurveyGetMySurveyInfo.do',
+			type:'post',
 			data:{
 				mode:"next",
-				c_code:$('.cateBottom #btnNext').val(),
+				myType:$('.cateBottom #btnNext').val(),
 				page:gPage
 			},
 			success:function(data){
-				for(let i = 0 ;i < data.surveys.length; i++){
+				for(let i = 0; i < data.surveys.length; i++){
 					let survey = data.surveys[i];
 					let obj = $('<ul>' + 
 					'<li>' + survey.writer + '</li>' +
@@ -59,7 +65,12 @@ $.fn.bindGetNext = function(){
 					'</ul>');
 					obj.data('survey', survey);
 					obj.data("respondent", data.respondent);
-					obj.bindListClick();
+					if (clicked_myType == 'MY' || clicked_myType == 'inter') {
+						obj.bindListClick();
+					}
+					else if (clicked_myType =='MY1' || clicked_myType == 'inter1' || clicked_myType == 'phar') {
+						obj.bindCloseSurveyClick();
+					}
 					$('.cateCont').append(obj);
 				}
 				gPage = data.page;
@@ -70,13 +81,14 @@ $.fn.bindGetNext = function(){
 
 $.fn.bindGetPrev = function(){
 	this.click(function(){
+		var clicked_myType = $('.cateBottom #btnPrev').val();
 		$('.cateCont ul').remove();
 		$.ajax({
-			url:'../SurveyGetByCategory.do',
-			type:'get',
+			url:'../SurveyGetMySurveyInfo.do',
+			type:'post',
 			data:{
 				mode:"prev",
-				c_code:$('.cateBottom #btnPrev').val(),
+				myType:$('.cateBottom #btnPrev').val(),
 				page:gPage
 			},
 			success:function(data){
@@ -90,7 +102,12 @@ $.fn.bindGetPrev = function(){
 					'</ul>');
 					obj.data('survey', survey);
 					obj.data("respondent", data.respondent);
-					obj.bindListClick();
+					if (clicked_myType == 'MY' || clicked_myType == 'inter') {
+						obj.bindListClick();
+					}
+					else if (clicked_myType =='MY1' || clicked_myType == 'inter1' || clicked_myType == 'phar') {
+						obj.bindCloseSurveyClick();
+					}
 					$('.cateCont').append(obj);
 				}
 				gPage = data.page;
@@ -101,13 +118,14 @@ $.fn.bindGetPrev = function(){
 
 $.fn.bindGetFirst = function(){
 	this.click(function(){
+		var clicked_myType = $('.cateBottom #btnFirst').val();
 		$('.cateCont ul').remove();
 		$.ajax({
-			url:'../SurveyGetByCategory.do',
+			url:'../SurveyGetMySurveyInfo.do',
 			type:'get',
 			data:{
 				mode:"first",
-				c_code:$('.cateBottom #btnFirst').val()
+				myType:$('.cateBottom #btnFirst').val()
 			},
 			success:function(data){
 				for(let i = 0 ;i < data.surveys.length; i++){
@@ -120,7 +138,12 @@ $.fn.bindGetFirst = function(){
 					'</ul>');
 					obj.data('survey', survey);
 					obj.data("respondent", data.respondent);
-					obj.bindListClick();
+					if (clicked_myType == 'MY' || clicked_myType == 'inter') {
+						obj.bindListClick();
+					}
+					else if (clicked_myType =='MY1' || clicked_myType == 'inter1' || clicked_myType == 'phar') {
+						obj.bindCloseSurveyClick();
+					}
 					$('.cateCont').append(obj);
 				}
 				gPage = 1;
@@ -132,13 +155,14 @@ $.fn.bindGetFirst = function(){
 $.fn.bindGetLast = function(){
 	currentPage = 10000;
 	this.click(function(){
+		var clicked_myType = $('.cateBottom #btnLast').val();
 		$('.cateCont ul').remove();
 		$.ajax({
-			url:'../SurveyGetByCategory.do',
-			type:'get',
+			url:'../SurveyGetMySurveyInfo.do',
+			type:'post',
 			data:{
 				mode:"last",
-				c_code:$('.cateBottom #btnLast').val()
+				myType:$('.cateBottom #btnLast').val()
 			},
 			success:function(data){
 				for(let i = 0 ;i < data.surveys.length; i++){
@@ -151,7 +175,12 @@ $.fn.bindGetLast = function(){
 					'</ul>');
 					obj.data('survey', survey);
 					obj.data("respondent", data.respondent);
-					obj.bindListClick();
+					if (clicked_myType == 'MY' || clicked_myType == 'inter') {
+						obj.bindListClick();
+					}
+					else if (clicked_myType =='MY1' || clicked_myType == 'inter1' || clicked_myType == 'phar') {
+						obj.bindCloseSurveyClick();
+					}
 					$('.cateCont').append(obj);
 				}
 				gPage = data.page;
@@ -169,9 +198,16 @@ $.fn.bindListClick = function() {
 			alert("로그인 시 참여가능합니다.");
 			return;
 		}
-			
 		checkResponse(s_code, resp); 
 	});
+}
+
+$.fn.bindCloseSurveyClick = function(){
+	$(this).click(function(){
+		let ul = $(this);
+		let s_code = ul.data('survey').s_code;
+		location.href = 'surveyResult.jsp?s_code='+s_code;
+	})
 }
 
 function checkResponse(s_code, respondent) {
@@ -193,3 +229,4 @@ function checkResponse(s_code, respondent) {
 		}
 	});
 }
+

@@ -15,9 +15,9 @@
 			<li><button type="button" name="categroy" value="SOC">사회,정치</button></li>
 			<li><button type="button" name="categroy" value="SPRT">스포츠,레저</button></li>
 			<li><button type="button" name="categroy" value="TRVL">여행</button></li>
-			<li><button type="button" name="categroy" value="ETC">기타</button></li>
 		</ul>
 	</div>
+	<div id="currentCate"></div>
 	<div class="categorySurvey">
 		<div class="cateTitle">
 			<ul>

@@ -23,10 +23,28 @@ $.fn.bindLogin = function() {
 			},
 			success: function(data) {
 				alert(data.message);
-				location.reload();
+				switch(data.errno){
+				case 0:
+					location.reload();
+					break; 
+				case 1:
+					location.reload();
+					break;
+				case 2:
+					location.href = 'report.jsp';
+					break;
+				}
 			}
 		});
 	});	
+}
+
+$.fn.bindEnterPress = function() {
+	this.keypress(function(e) {
+		if (e.keyCode == 13) {
+			$('.login #signIn').trigger('click');
+		}
+	});
 }
 
 $(document).ready(function(){
@@ -38,6 +56,8 @@ $(document).ready(function(){
 		$('.mid > #side > #changePass').css('display', 'block');
 	})
 	
-
+	$('.login #email').bindEnterPress();
+	$('.login #pass').bindEnterPress();
+	
 })
 

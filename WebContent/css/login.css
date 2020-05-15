@@ -8,12 +8,12 @@ div.login ul{list-style: none; margin:20px 0px 20px 9px }
 div.login input#email{ width:200px; height:40px; padding:0px 0px 0px 5px; margin:0px 0px 10px 0px; border-right:0px; border-top:0px; border-left:0px; border-bottom:1px solid rgb(182, 182, 182); font-size:13pt;}
 div.login input#pass{ width:200px; height:40px; padding:0px 0px 0px 5px; margin:0px 0px 10px 0px; border-right:0px; border-top:0px; border-left:0px; border-bottom:1px solid rgb(182, 182, 182); font-size:13pt;}
 div.login button{ white-space: nowrap; margin:20px 0px 18px 0px ; width: 200px; height:30px; font-size:13pt; border:1px solid rgb(178, 178, 178); background-color:rgb(182, 182, 182); }
-div.login button:hover{ background-color:rgb(103, 103, 103); color:white;}
+div.login button:hover{ background-color:rgb(103, 103, 103); color:white; cursor:pointer;}
 div.login a{font-size:13pt;}
 div.login a#signUp { color: rgb(80, 80, 80); text-decoration:none; margin:0px 10px 0px 0px ;}
 div.login button#findPass { border:0px; background-color:white; width: 110px;color:rgb(80, 80, 80); text-decoration:none; margin:0px 0px 0px 15px ;}
 div.login a:hover{ font-weight: bold;}
-div.login #findPass:hover{ font-weight: bold;}
+div.login #findPass:hover{ font-weight: bold; cursor:pointer;}
 
 
 
