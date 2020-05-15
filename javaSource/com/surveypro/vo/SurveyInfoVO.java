@@ -3,6 +3,7 @@ package com.surveypro.vo;
 import java.util.HashMap;
 
 public class SurveyInfoVO {
+	private int s_code;
 	private String writer;
 	private String s_title;
 	private int interest_count;
@@ -10,6 +11,25 @@ public class SurveyInfoVO {
 	private String end_date;
 	private String spare_sample_num;
 	private int price;
+	private String respondent;
+	private String c_desc;
+	private String email;
+
+	public String getRespondent() {
+		return respondent;
+	}
+
+	public void setRespondent(String respondent) {
+		this.respondent = respondent;
+	}
+
+	public int getS_code() {
+		return s_code;
+	}
+
+	public void setS_code(int s_code) {
+		this.s_code = s_code;
+	}
 
 	public String getWriter() {
 		return writer;
@@ -74,6 +94,8 @@ public class SurveyInfoVO {
 		result = prime * result + ((end_date == null) ? 0 : end_date.hashCode());
 		result = prime * result + interest_count;
 		result = prime * result + price;
+		result = prime * result + ((respondent == null) ? 0 : respondent.hashCode());
+		result = prime * result + s_code;
 		result = prime * result + ((s_title == null) ? 0 : s_title.hashCode());
 		result = prime * result + ((spare_sample_num == null) ? 0 : spare_sample_num.hashCode());
 		result = prime * result + ((writer == null) ? 0 : writer.hashCode());
@@ -98,6 +120,13 @@ public class SurveyInfoVO {
 		if (interest_count != other.interest_count)
 			return false;
 		if (price != other.price)
+			return false;
+		if (respondent == null) {
+			if (other.respondent != null)
+				return false;
+		} else if (!respondent.equals(other.respondent))
+			return false;
+		if (s_code != other.s_code)
 			return false;
 		if (s_title == null) {
 			if (other.s_title != null)
@@ -124,6 +153,7 @@ public class SurveyInfoVO {
 
 	public HashMap<String, Object> convertMap() {
 		HashMap<String, Object> map = new HashMap<>();
+		map.put("s_code", s_code);
 		map.put("writer", writer);
 		map.put("s_title", s_title);
 		map.put("interest_count", interest_count);
@@ -131,7 +161,26 @@ public class SurveyInfoVO {
 		map.put("end_date", end_date);
 		map.put("spare_sample_num", spare_sample_num);
 		map.put("price", price);
+		map.put("respondent", respondent);
+		map.put("c_desc", c_desc);
+		map.put("email", email);
 		return map;
+	}
+
+	public String getC_desc() {
+		return c_desc;
+	}
+
+	public void setC_desc(String c_desc) {
+		this.c_desc = c_desc;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }
