@@ -8,29 +8,29 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.simple.JSONObject;
 
 import com.surveypro.member.service.IMemberService;
-import com.surveypro.member.service.SendTempPassService;
+import com.surveypro.member.service.MemberUpdateAllService;
 
-public class SendTempPassController implements MemberBackController {
+public class MemberUpdateAllController implements MemberBackController {
 
 	private IMemberService service;
 
-	public SendTempPassController() {
-		service = new SendTempPassService();
+	public MemberUpdateAllController() {
+		service = new MemberUpdateAllService();
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		// TODO Auto-generated method stub
+
 		JSONObject jObj = new JSONObject();
 		try {
 			service.doService(request, response);
 			jObj.put("result", true);
-			jObj.put("message", "임시 비밀번호가 전송되었습니다.");
+			jObj.put("message", "회원 등급 갱신에 성공했습니다.");
 		} catch (Exception e) {
-			jObj.put("result", false);
-			jObj.put("message", "가입되지 않은 이메일 주소입니다.");
 			e.printStackTrace();
+			jObj.put("result", false);
+			jObj.put("message", "회원 등급 갱신에 실패했습니다.");
 		}
 
 		PrintWriter out = null;
@@ -40,8 +40,8 @@ public class SendTempPassController implements MemberBackController {
 			out = response.getWriter();
 			out.println(jObj.toJSONString());
 		} catch (Exception e) {
-			e.printStackTrace();
 		}
+
 	}
 
 }

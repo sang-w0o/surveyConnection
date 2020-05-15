@@ -51,6 +51,7 @@ public class MemberLoginService implements IMemberService {
 								m = dao.getMember(email, pass);
 								session = request.getSession();
 								m.setPass(pass);
+								m.setEmail(email);
 								session.setAttribute("result", true);
 								session.setAttribute("userInfo", m);
 
