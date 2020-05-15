@@ -20,15 +20,16 @@ public class CategoryDAO {
 	}
 
 	public String getDesc(String c_code) {
-		String sql = "SELECT c_desc FROM categories WHERE c_code =?";
+		String sql = "SELECT c_desc FROM categories WHERE c_code=?";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String desc = null;
-
+		
 		try {
 			con = DbManager.getConnection();
 			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, c_code);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				desc = rs.getString("c_desc");
