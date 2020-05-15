@@ -21,7 +21,6 @@ public class CategoryGetAllDescService implements ICategoryService {
 		synchronized (dao) {
 			ArrayList<String> allDesc = dao.getAllDesc();
 			request.setAttribute("allDesc", allDesc);
-
 		}
 	}
 
