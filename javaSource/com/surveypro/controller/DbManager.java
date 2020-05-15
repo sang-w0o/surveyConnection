@@ -14,7 +14,7 @@ public class DbManager {
 	public static Connection getConnection() throws NamingException, SQLException {
 
 		InitialContext ic = new InitialContext();
-		DataSource ds = (DataSource) ic.lookup("java:comp/env/jdbc/servlet");
+		DataSource ds = (DataSource) ic.lookup("java:comp/env/jdbc/knj");
 
 		return ds.getConnection();
 	}
