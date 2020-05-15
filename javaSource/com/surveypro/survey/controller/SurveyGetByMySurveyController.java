@@ -11,16 +11,15 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import com.surveypro.survey.service.ISurveyService;
-import com.surveypro.survey.service.SurveyGetByCategoryService;
+import com.surveypro.survey.service.SurveyGetByMySurveyService;
 import com.surveypro.vo.MemberVO;
 import com.surveypro.vo.SurveyInfoVO;
 
-public class SurveyGetByCategoryController implements SurveyBackController {
-
+public class SurveyGetByMySurveyController implements SurveyBackController {
 	private ISurveyService service;
 
-	public SurveyGetByCategoryController() {
-		service = new SurveyGetByCategoryService();
+	public SurveyGetByMySurveyController() {
+		service = new SurveyGetByMySurveyService();
 	}
 
 	@SuppressWarnings("unchecked")
@@ -29,7 +28,7 @@ public class SurveyGetByCategoryController implements SurveyBackController {
 
 		JSONObject jObj;
 		PrintWriter out = null;
-	
+		
 		HttpSession session = request.getSession(false);
 		MemberVO m = (MemberVO)session.getAttribute("userInfo");
 		
@@ -42,14 +41,13 @@ public class SurveyGetByCategoryController implements SurveyBackController {
 			else {
 				jObj.put("respondent", m.getEmail());
 			}
-			jObj.put("result", true);
-			jObj.put("message", "Fetching surveys by category completed.");
 			int page = (Integer) request.getAttribute("page");
-			String c_code = (String) request.getAttribute("c_code");
 			int pageCount = (Integer) request.getAttribute("pageCount");
 			ArrayList<SurveyInfoVO> surveys = (ArrayList<SurveyInfoVO>) request.getAttribute("surveys");
+			
+			jObj.put("result", true);
+			jObj.put("message", "내 설문 가져오기 성공");
 			jObj.put("page", page);
-			jObj.put("c_code", c_code);
 			jObj.put("pageCount", pageCount);
 			JSONArray jAry = new JSONArray();
 			for (SurveyInfoVO survey : surveys) {
@@ -58,10 +56,11 @@ public class SurveyGetByCategoryController implements SurveyBackController {
 				jAry.add(jTemp);
 			}
 			jObj.put("surveys", jAry);
-		} catch (Exception e) {
+		} 
+		catch (Exception e) {
 			jObj = new JSONObject();
 			jObj.put("result", false);
-			jObj.put("message", "Fetching surveys by category failed.");
+			jObj.put("message", "내 설문 가져오기 실패");
 			e.printStackTrace();
 		}
 		response.setCharacterEncoding("UTF-8");
@@ -69,7 +68,8 @@ public class SurveyGetByCategoryController implements SurveyBackController {
 		try {
 			out = response.getWriter();
 			out.println(jObj.toJSONString());
-		} catch (Exception e) {
+		} 
+		catch (Exception e) {
 			e.printStackTrace();
 		}
 	}

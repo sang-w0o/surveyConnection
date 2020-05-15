@@ -10,21 +10,19 @@ import com.surveypro.dao.SurveyInfoDAO;
 import com.surveypro.vo.SurveyInfoVO;
 
 public class SurveyGetSurveyInfoService implements ISurveyService {
-	
+
 	private SurveyInfoDAO dao;
-	
+
 	public SurveyGetSurveyInfoService() {
-		dao = (SurveyInfoDAO)DAOManager.getDAO("SurveyInfoDAO");
+		dao = (SurveyInfoDAO) DAOManager.getDAO("SurveyInfoDAO");
 	}
-	
+
 	@Override
-	public void doService(HttpServletRequest request, HttpServletResponse response) 
-			throws Exception {
-		
+	public void doService(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
 		ArrayList<SurveyInfoVO> list = null;
-		
-		String type = (String)request.getParameter("msg");
-		
+		String type = (String) request.getParameter("msg");
+
 		synchronized (dao) {
 			switch (type) {
 			case "deadLine":
@@ -40,7 +38,7 @@ public class SurveyGetSurveyInfoService implements ISurveyService {
 				break;
 			}
 		}
-		
+
 		request.setAttribute("list", list);
 	}
 }

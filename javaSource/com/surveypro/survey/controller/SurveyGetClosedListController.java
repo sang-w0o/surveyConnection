@@ -11,61 +11,59 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import com.surveypro.survey.service.ISurveyService;
-import com.surveypro.survey.service.SurveyGetSurveyInfoService;
+import com.surveypro.survey.service.SurveyGetClosedListService;
 import com.surveypro.vo.MemberVO;
 import com.surveypro.vo.SurveyInfoVO;
 
-public class SurveyGetSurveyInfoController implements SurveyBackController {
-	
+public class SurveyGetClosedListController implements SurveyBackController {
+
 	private ISurveyService service;
-	
-	public SurveyGetSurveyInfoController() {
-		service = new SurveyGetSurveyInfoService();
+
+	public SurveyGetClosedListController() {
+		service = new SurveyGetClosedListService();
 	}
-	
+
 	@SuppressWarnings("unchecked")
+	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		
+
 		JSONArray jArray = new JSONArray();
 		JSONObject jObj = new JSONObject();
-		ArrayList<SurveyInfoVO> list = null;
-		
+		ArrayList<SurveyInfoVO> endSurveyList = null;
+
 		HttpSession session = request.getSession(false);
-		MemberVO m = (MemberVO)session.getAttribute("userInfo");
+		MemberVO m = (MemberVO) session.getAttribute("userInfo");
 		if (m == null) {
 			jObj.put("respondent", null);
-		}
-		else {
+		} else {
 			jObj.put("respondent", m.getEmail());
 		}
-	
+
 		try {
 			service.doService(request, response);
-			list = (ArrayList<SurveyInfoVO>)request.getAttribute("list");
-			
-			for (SurveyInfoVO s : list) {
-				JSONObject jtmp = new JSONObject();
-				jtmp.putAll(s.convertMap());
-				jArray.add(jtmp);
+			endSurveyList = (ArrayList<SurveyInfoVO>) request.getAttribute("endSurveyList");
+
+			for (SurveyInfoVO s : endSurveyList) {
+				JSONObject jTmp = new JSONObject();
+				jTmp.putAll(s.convertMap());
+				jArray.add(jTmp);
 			}
-		
-			jObj.put("errno", 0);
-			jObj.put("message", "설문 리스트 가져오기 성공");
-			jObj.put("list", jArray);
-		}
-		catch (Exception e) {
-			jObj.put("errno", 1);
+
+			jObj.put("result", true);
+			jObj.put("message", "마감 설문 목록 가져오기 성공!");
+			jObj.put("endSurveyList", jArray);
+		} catch (Exception e) {
+			jObj.put("result", false);
 			jObj.put("message", e.getMessage());
 		}
-		
+
 		PrintWriter out = null;
 		try {
 			response.setCharacterEncoding("UTF-8");
 			response.setContentType("application/json");
 			out = response.getWriter();
 			out.println(jObj.toJSONString());
-		} 
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
