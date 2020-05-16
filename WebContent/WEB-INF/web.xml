@@ -14,12 +14,12 @@
 	</welcome-file-list>
 	<resource-ref>
 		<description>jdbc Servlet</description>
-		<res-ref-name>jdbc/servlet</res-ref-name>
+		<res-ref-name>jdbc/knj</res-ref-name>
 		<res-type>javax.sql.DataSource</res-type>
 		<res-auth>Container</res-auth>
 	</resource-ref>
 	<servlet>
-		<servlet-name>member</servlet-name>
+		<servlet-name>servlet</servlet-name>
 		<servlet-class>com.surveypro.controller.FrontController</servlet-class>
 		<init-param>
 			<param-name>MemberInsert.do</param-name>
@@ -192,7 +192,7 @@
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>member</servlet-name>
+		<servlet-name>servlet</servlet-name>
 		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
 
