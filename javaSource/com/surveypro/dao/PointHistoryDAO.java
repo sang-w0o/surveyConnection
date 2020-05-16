@@ -231,7 +231,7 @@ public class PointHistoryDAO {
 		try {
 			con = DbManager.getConnection();
 			if (isWriterOfSurvey(s_code, email)) {
-				return false;
+				return true;
 			} else {
 				pstmt = con.prepareStatement(sql);
 				pstmt.setString(1, email);
