@@ -95,19 +95,15 @@
 				<br/>
 				<div style="font-weight:bold; font-size:19pt; text-align:center;"> 신고 시스템에 대한 설명</div>
 				<br/>
-				<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VC에서의 신고 시스템에는 2가지의 경우가 있습니다.</div>
+				<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VC에서의 신고 시스템에는 단 1가지의 경우가 있습니다.</div>
 				<br/>
-				<div style="font-size:14pt; font-weight:bold;">&nbsp;&nbsp;&nbsp;&nbsp;(1)응답자가 해당 설문 작성자를 신고하는 경우</div>			
+				<div style="font-size:14pt; font-weight:bold;">&nbsp;&nbsp;&nbsp;&nbsp;(*)응답자가 해당 설문 작성자를 신고하는 경우</div>			
 				<br/>
 				<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;응답자는 설문 응답 도중 부적절하다는 문항이 있다고 판단될 시에, 해당 응답자를 신고할 수 있습니다.</div>
 				<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이 때, 신고자는 <span style="font-size:14pt; font-weight:bold">부적절한 문항 번호와 사유를 필수로 기재</span>해야 합니다.</div>
 				<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이러한 경우의 신고는 관리자가 <span style="font-size:14pt; font-weight:bold">승인 또는 반려</span>할 수 있습니다.</div>
 				<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight:bold; font-size:12pt;">승인 시 -></span>해당 신고가 인정되어 해당 설문의 작성자는 신고 누적 회수가 1회 증가합니다.</div>
 				<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight:bold; font-size:12pt;">반려 시 -></span>해당 신고는 무효 처리 됩니다.</div>
-				<br/>
-				<div style="font-size:14pt; font-weight:bold;">&nbsp;&nbsp;&nbsp;&nbsp;(2)필터 문항에 오답을 기재하는 경우</div>
-				<br/>
-				<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이 경우, 해당 응답자는 설문에 불성실하게 임한 것으로 판단되어 관리자의 개입 없이 신고 회수가 누적됩니다.</div>
 				<br/>
 				<div style="font-size:14pt; font-weight:bold;">&nbsp;&nbsp;&nbsp;&nbsp;**VC의 모든 회원은 1달 기준 신고 누적 횟수가 4회 이상이면 등급이 1단계 강등됩니다.**</div>
 				<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;신고 누적 횟수는 매달 1일에 초기화됩니다.</div>

@@ -63,15 +63,7 @@
 				<br /> <br />
 				<div>
 					<div style="font-weight: bold; font-size: 20pt;">&nbsp;&nbsp;&nbsp;(3)답변하기</div>
-					<div style="font-size: 17pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;회원은타인의 설문지에 답변할 수 있습니다!</div>
-					<div style="font-size: 15pt">
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VC에서는"<span
-							style="font-size: 15pt; font-weight: bold">필터문항</span>"을 제공하여 답변을검증합니다.
-					</div>
-					<div style="font-weight: bold">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"필터문항"
-						: 누구나 아는 기본적인 문제</div>
-					<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--> 필터 문항에 오답을 기재한 사람은 설문에 성실하게 임하지
-						않았다고 판단합니다.</div>
+					<div style="font-size: 17pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;회원은 타인의 설문지에 답변할 수 있습니다!</div>
 				</div>
 				<br /> <br />
 				<div>
