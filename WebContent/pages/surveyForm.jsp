@@ -5,6 +5,17 @@
 <head>
 <meta charset="UTF-8">
 <title>설문 작성하기</title>
+<%
+	if( session==null || session.getAttribute("userInfo")==null ){
+%>
+	<script>
+		alert("로그인 후 이용 가능한 서비스 입니다.");
+		location.href = "index.jsp";
+	</script>
+	
+<% 	
+	}
+%>
 <script src="../script/jquery-3.5.0.min.js"></script>
 <script src="../script/surveyForm.js"></script>
 <link rel="stylesheet" href="../css/surveyForm.css">
