@@ -110,7 +110,19 @@ $.fn.bindSurveySubmit = function(){
 			return;
 		}
 		if($('#surveyName').val().trim() == ''){
-			alert('문항 제목을 입력하셔야 합니다.');
+			alert('설문 제목을 입력하셔야 합니다.');
+			return;
+		}
+		
+		let qNum = 0;
+		let qList = $('.questionList>ul>li:first-child>input:first-child');
+		qList.each(function(index, item){
+			if($(item).val().trim() != ''){
+				qNum++;
+			}
+		})
+		if(qNum != queNum){
+			alert('모든 문항에 제목을 입력하셔야 합니다.');
 			return;
 		}
 		$.ajax({
@@ -147,6 +159,12 @@ function questionSubmit(s_code) {
 		let flag = $(item).attr('style');
 		if (flag == 'display: inline-block;') {
 			qArr.push($(item).val());
+			//추가 부분 시작
+			/*if($(item).val().trim() == ''){
+				alert('모든 문항에 제목을 입력하셔야 합니다.');
+				return;
+			}*/
+			//추가 부분 끝
 			qArrType.push($(item).attr('checkType'));
 		}
 	});
