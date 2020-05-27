@@ -17,9 +17,6 @@
 			<li id="writerInfo" data-writer="${userInfo.email}">작성자 : ${userInfo.nick } (${userInfo.email})</li>
 			<li><input type="text" id="surveyName" placeholder="      제목을 입력 하세요.">
 			<select id="selectBox">
-				<option>김주성</option>
-				<option>바보</option>
-				<option>멍청이</option>
 			</select></li>
 			<li id="isPublic">설문 결과를 <label for="open"><input type="radio" id="open" name="open" value="Y" checked>공개</label>
 			<label for="close"><input type="radio" id="close" name="open" value="N">비공개</label>&nbsp;&nbsp;&nbsp;합니다.</li>
