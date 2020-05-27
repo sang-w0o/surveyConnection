@@ -109,6 +109,10 @@ $.fn.bindSurveySubmit = function(){
 			alert('문항이 최소 1개 이상이어야 제출 가능합니다.');
 			return;
 		}
+		if($('#surveyName').val().trim() == ''){
+			alert('문항 제목을 입력하셔야 합니다.');
+			return;
+		}
 		$.ajax({
 			url:'../SurveyInsert.do',
 			type:'post',
