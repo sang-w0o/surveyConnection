@@ -159,12 +159,6 @@ function questionSubmit(s_code) {
 		let flag = $(item).attr('style');
 		if (flag == 'display: inline-block;') {
 			qArr.push($(item).val());
-			//추가 부분 시작
-			/*if($(item).val().trim() == ''){
-				alert('모든 문항에 제목을 입력하셔야 합니다.');
-				return;
-			}*/
-			//추가 부분 끝
 			qArrType.push($(item).attr('checkType'));
 		}
 	});
@@ -179,7 +173,6 @@ function questionSubmit(s_code) {
 			s_code: s_code
 		},
 		success: function(data) {
-			console.log(data.message);
 			choiceSubmit();
 		}
 	});
@@ -198,7 +191,7 @@ function choiceSubmit() {
 			
 			let lis = $(item).closest('li').siblings('li');
 			lis.each(function(index, item) {
-				console.log(lis.length);
+				console.log(lis);
 				let input = $(item).find('input').last();
 				let flag2 = $(input).attr('check');
 				if (flag2 == 'true') {
