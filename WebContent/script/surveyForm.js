@@ -9,11 +9,9 @@ $.fn.bindAddClick=function(){
 	$('.sMid>.questionList #addChoice').click(function(){
 		let a = $(this).val();
 		let ul = $(this).closest('li').closest('ul');
-		console.log("추가:"+a);
 		$(ul).find("li:nth-child("+a+")>input").css("display","inline-block");
 		$(ul).find("li:nth-child("+a+")>input").attr("check", "true");
 		
-		console.log("추가:"+a);
 		++a;
 		$(this).val(a>MAX_CHO?MAX_CHO:a);
 		$(this).siblings('button#deleteChoice').val(a>MAX_CHO?MAX_CHO:a);
@@ -27,7 +25,6 @@ $.fn.bindAddClick=function(){
 			alert("문항의 최대 개수는 "+(queNum-1)+"개 입니다.")
 			return;
 		}
-		console.log("추가"+queNum);
 		$(".surwrap>.sMid>.questionList>ul:nth-child("+queNum+")").css("display","inline-block");
 		
 		$(".questionList>ul:nth-child("+queNum+")>li#qt").css("display","inline-block");
@@ -54,10 +51,8 @@ $.fn.bindDeleteClick=function(){
 	$('.sMid>.questionList #deleteChoice').click(function(){
 		let a = $(this).val()-1 < 2 ? 2 : $(this).val()-1 ;
 		let ul = $(this).closest('li').closest('ul');
-		console.log("삭제:"+a);
 		$(ul).find("li:nth-child("+a+")>input").css("display","none");
 		$(ul).find("li:nth-child("+a+")>input").removeAttr("check");
-		console.log("삭제:"+a);
 		$(this).val(a);
 		$(this).siblings('button#addChoice').val(a);
 	})
@@ -68,7 +63,6 @@ $.fn.bindDeleteClick=function(){
 			return;
 		}
 		
-		console.log("삭제"+queNum);
 		$(".questionList>ul:nth-child("+queNum+")>li>button").css("display","none");
 		$(".questionList>ul:nth-child("+queNum+")>li#qt>input").css("display","none");
 		$(".questionList>ul:nth-child("+queNum+")>li>input").css("display","none");
@@ -90,7 +84,6 @@ $.getCategoryList = function(){
 		url:'../CategoryGetAll.do',
 		type:'get',
 		success:function(data){
-			console.log(data);
 			for(let i = 0; i < data.categories.length; i++){
 				let category = data.categories[i];
 				let obj = $('<option/>' + 
@@ -125,6 +118,60 @@ $.fn.bindSurveySubmit = function(){
 			alert('모든 문항에 제목을 입력하셔야 합니다.');
 			return;
 		}
+		
+		var finalArr = [];
+		var tmpNum = 0;
+		var finalLength = 0;
+		var realLength = 0;
+		let qList2 = $('.questionList>ul>li:first-child>input:first-child');
+		qList2.each(function(index, item) {
+			let flag1 = $(item).attr('checkType');
+			var q_number = index + 1;
+			if (flag1 == 'C') {
+				var tmpArr = [];
+				tmpArr.push(q_number);
+				
+				let lis = $(item).closest('li').siblings('li');
+				lis.each(function(index, item) {
+					let input = $(item).find('input').last();
+					let flag2 = $(input).attr('check');
+					if (flag2 == 'true') {
+						tmpArr.push($(input).val());
+					}
+				});
+				if(tmpArr.length == 1){
+					tmpNum = 1;
+				}
+				finalArr.push(tmpArr);
+			}
+			
+			finalLength = 0;
+			realLength = 0;
+			
+			finalArr.forEach(function(item, index){
+				item.forEach(function(it, idx){
+					if(it != ''){
+						realLength++;
+						finalLength++;
+					}
+					else{
+						finalLength++;
+					}
+				})
+			})
+			
+		});
+		
+		if(tmpNum == 1){
+			alert('객관식 문항은 최소 1개의 선택지가 있어야 합니다.');
+			return;
+		}
+		
+		if(finalLength != realLength){
+			alert('모든 선택지에 내용을 입력하셔야 합니다.');
+			return;
+		}
+		
 		$.ajax({
 			url:'../SurveyInsert.do',
 			type:'post',
@@ -146,7 +193,6 @@ $.fn.bindSurveySubmit = function(){
 					location.reload();
 				}
 			}
-			
 		})
 	})
 }
@@ -181,7 +227,6 @@ function questionSubmit(s_code) {
 function choiceSubmit() {
 	var finalArr = [];
 	let qList = $('.questionList>ul>li:first-child>input:first-child');
-	console.log(qList.length);
 	qList.each(function(index, item) {
 		let flag1 = $(item).attr('checkType');
 		var q_number = index + 1;
@@ -191,11 +236,9 @@ function choiceSubmit() {
 			
 			let lis = $(item).closest('li').siblings('li');
 			lis.each(function(index, item) {
-				console.log(lis);
 				let input = $(item).find('input').last();
 				let flag2 = $(input).attr('check');
 				if (flag2 == 'true') {
-					console.log($(input).val());
 					tmpArr.push($(input).val());
 				}
 			});
@@ -212,7 +255,7 @@ function choiceSubmit() {
 				choiceList: finalArr[i]
 			},
 			success: function(data) {
-				console.log(data);
+				;
 			}
 		});
 	}
