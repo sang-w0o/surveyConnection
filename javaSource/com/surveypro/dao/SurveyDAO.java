@@ -306,6 +306,39 @@ public class SurveyDAO {
 		return result;
 	}
 
+	public boolean isWriterOfSurvey(int s_code, String respondent) {
+		String sql = "SELECT email FROM survey WHERE s_code=?";
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String writer = null;
+		boolean result = false;
+
+		try {
+			con = DbManager.getConnection();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, s_code);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				writer = rs.getString("email");
+				if (writer.equals(respondent)) {
+					result = true;
+				} else {
+					result = false;
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (NamingException e) {
+			e.printStackTrace();
+		} finally {
+			DbManager.close(rs);
+			DbManager.close(pstmt);
+			DbManager.close(con);
+		}
+		return result;
+	}
+
 	public static int getParticipateCount(String email) {
 
 		int pCount = 0;
